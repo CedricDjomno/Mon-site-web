@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>L’Étoile tombée dans la Mare</title>
+  <link rel="stylesheet" href="histoire.css" />
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
+</head>
+<body>
+
+  <!-- Bouton Mode nuit -->
+  <button id="toggle-mode" title="Mode nuit">🌙</button>
+
+  <!-- Contenu de l’histoire -->
+  <main class="container">
+    <h2>⭐ L’Étoile tombée dans la Mare</h2>
+    <h2><img src="../assets/etoile-mare.jpg" alt="Une étoile tombée dans l’eau d’une mare" class="illustration" />
+</h2>
+<div class="audio-controls">
+  <button id="btn-lecture">🎙️ Écouter cette histoire</button>
+  <button id="btn-arret" style="display:none;">⏹ Arrêter la lecture</button>
+</div>
+
+    <p id="histoire">
+Un soir d’été, une étoile se détacha du ciel. Elle glissa entre les branches, effleura les feuilles… et tomba doucement dans une mare oubliée.
+
+L’eau frémit. Les grenouilles se turent. La lune elle-même sembla retenir son souffle.
+
+— Où suis-je ? demanda l’étoile.
+
+La mare répondit :
+— Tu es en moi. Dans mes eaux tranquilles.
+
+— Mais je suis censée briller dans le ciel…
+
+— Et moi, je reflète ce qui tombe en moi. Ensemble, nous pouvons faire autre chose.
+
+Alors, la mare devint miroir, et l’étoile s’y posa comme un secret. Les animaux du bois venaient la voir en silence. Et chacun repartait un peu changé, comme s’ils avaient vu quelque chose qu’on ne voit qu’une fois.
+
+L’étoile ne remonta jamais. Mais sa lumière resta là, cachée dans l’eau calme.
+
+Et certains soirs, quand le vent se tait, on peut encore la voir luire dans la mare — comme un vœu tombé au bon endroit.
+
+Fin.
+    </p>
+
+    <div class="interactions">
+      <div class="interaction-buttons">
+        <button class="like-btn" data-story-id="etoile">
+          <span class="icon">❤️</span>
+          <span class="like-count">0</span>
+        </button>
+        <button class="show-comments-btn" data-story-id="etoile">
+          <span class="icon">💬</span>
+          <span class="comment-text">Commenter</span>
+          <span class="comment-count">(0)</span>
+        </button>
+      </div>
+      <div class="comment-section" style="display: none;">
+        <div class="comments-list"></div>
+        <div class="comment-form">
+          <input type="text" class="comment-input" placeholder="Ajouter un commentaire...">
+          <button class="comment-btn" data-story-id="etoile">Publier</button>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <script src="histoire.js"></script>
+</body>
+</html>

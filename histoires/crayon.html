@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Le Crayon qui ne Dessinait Plus</title>
+  <link rel="stylesheet" href="histoire.css" />
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
+</head>
+<body>
+
+  <!-- Bouton Mode nuit -->
+  <button id="toggle-mode" title="Mode nuit">🌙</button>
+
+  <!-- Contenu de l’histoire -->
+  <main class="container">
+    <h2>✏️ Le Crayon qui ne Dessinait Plus</h2>
+    <h2><img src="../assets/crayon-dormant.jpg" alt="Un vieux crayon posé sur un carnet vide" class="illustration" />
+</h2>
+<div class="audio-controls">
+  <button id="btn-lecture">🎙️ Écouter cette histoire</button>
+  <button id="btn-arret" style="display:none;">⏹ Arrêter la lecture</button>
+</div>
+
+    <p id="histoire">
+Un vieux crayon dormait au fond d’un tiroir. Jadis, il avait tracé des châteaux, des dragons, des visages heureux… mais cela faisait longtemps qu’il n’avait plus rien dessiné.
+
+Il avait peur. Peur de mal faire. Peur de la page blanche.
+
+Un jour, une main d’enfant fouilla le tiroir et le trouva.
+
+— Il est tout petit, dit la voix. Il a dû beaucoup dessiner.
+
+Et l’enfant le posa sur une grande feuille. Le crayon trembla un peu. Puis traça une ligne. Puis une autre. Puis un ciel, une colline, un rire.
+
+À chaque trait, il retrouvait un peu de lui-même.
+
+À la fin, l’enfant chuchota :
+
+— C’est toi qui as dessiné ça, pas moi.
+
+Le crayon n’eut pas besoin de répondre.
+
+Il brillait un peu, usé mais vivant.
+
+Fin.
+    </p>
+
+    <div class="interactions">
+      <div class="interaction-buttons">
+        <button class="like-btn" data-story-id="crayon">
+          <span class="icon">❤️</span>
+          <span class="like-count">0</span>
+        </button>
+        <button class="show-comments-btn" data-story-id="crayon">
+          <span class="icon">💬</span>
+          <span class="comment-text">Commenter</span>
+          <span class="comment-count">(0)</span>
+        </button>
+      </div>
+      <div class="comment-section" style="display: none;">
+        <div class="comments-list"></div>
+        <div class="comment-form">
+          <input type="text" class="comment-input" placeholder="Ajouter un commentaire...">
+          <button class="comment-btn" data-story-id="crayon">Publier</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="histoire.js"></script>
+</body>
+</html>

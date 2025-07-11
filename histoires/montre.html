@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Le Silence et la Montre</title>
+  <link rel="stylesheet" href="histoire.css" />
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
+</head>
+<body>
+
+  <!-- Bouton Mode nuit -->
+  <button id="toggle-mode" title="Mode nuit">🌙</button>
+
+  <!-- Contenu de l’histoire -->
+  <main class="container">
+    <h2>⌚ Le Silence et la Montre</h2>
+    <h2><img src="../assets/montre-silence.jpg" alt="Une montre posée sur un coussin silencieux" class="illustration" />
+</h2>
+<div class="audio-controls">
+  <button id="btn-lecture">🎙️ Écouter cette histoire</button>
+  <button id="btn-arret" style="display:none;">⏹ Arrêter la lecture</button>
+</div>
+
+    <p id="histoire">
+Un vieil horloger avait créé une montre spéciale. Elle ne donnait pas l’heure… elle l’arrêtait.
+
+Chaque fois que quelqu’un la mettait à son poignet, le monde devenait plus lent. Les voitures cessaient de klaxonner. Les discussions devenaient des murmures. Et dans ce calme soudain, on pouvait entendre son propre cœur.
+
+Un jour, une petite fille entra dans l’atelier.
+
+— Vous avez une montre magique ? demanda-t-elle.
+
+L’horloger sourit et lui tendit la montre silencieuse.
+
+Elle la mit. Puis resta immobile. Très longtemps.
+
+Quand elle rouvrit les yeux, elle murmura :
+
+— Je crois que j’ai entendu mes pensées sourire.
+
+Et elle repartit, en retenant chaque seconde.
+
+Depuis ce jour, la montre dort dans sa boîte, et l’horloger attend le prochain visiteur prêt à entendre le silence.
+
+Fin.
+    </p>
+
+    <div class="interactions">
+      <div class="interaction-buttons">
+        <button class="like-btn" data-story-id="montre-silence">
+          <span class="icon">❤️</span>
+          <span class="like-count">0</span>
+        </button>
+        <button class="show-comments-btn" data-story-id="montre-silence">
+          <span class="icon">💬</span>
+          <span class="comment-text">Commenter</span>
+          <span class="comment-count">(0)</span>
+        </button>
+      </div>
+      <div class="comment-section" style="display: none;">
+        <div class="comments-list"></div>
+        <div class="comment-form">
+          <input type="text" class="comment-input" placeholder="Ajouter un commentaire...">
+          <button class="comment-btn" data-story-id="montre-silence">Publier</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="histoire.js"></script>
+</body>
+</html>

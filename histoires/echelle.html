@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>L’Échelle vers Maintenant</title>
+  <link rel="stylesheet" href="histoire.css" />
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
+</head>
+<body>
+
+  <button id="toggle-mode" title="Mode nuit">🌙</button>
+
+  <main class="container">
+    <h2>🪜 L’Échelle vers Maintenant</h2>
+    <h2><img src="../assets/echelle-ciel.jpg" alt="Une échelle posée contre un ciel vide" class="illustration" />
+</h2>
+<div class="audio-controls">
+  <button id="btn-lecture">🎙️ Écouter cette histoire</button>
+  <button id="btn-arret" style="display:none;">⏹ Arrêter la lecture</button>
+</div>
+
+    <p id="histoire">
+Un garçon voulait tout comprendre.
+
+Il fabriqua une grande échelle pour grimper jusqu’au ciel. Il voulait voir l’avenir. Il voulait attraper demain.
+
+Il monta, monta, sans fin. Et plus il montait, plus le monde en bas rapetissait.
+
+Un oiseau l’accompagna et dit :
+
+— Tu montes pour aller où ?
+
+— Là-haut. Vers ce qui vient.
+
+— Mais ce qui vient, c’est ici, juste maintenant.
+
+Le garçon s’arrêta.
+
+Il regarda autour de lui. Le vent, la lumière, le silence doux entre les branches.
+
+Puis il descendit. Et posa l’échelle contre un pommier.
+
+Il s’assit, croqua une pomme… et sourit.
+
+Fin.
+    </p>
+
+    <div class="interactions">
+      <div class="interaction-buttons">
+        <button class="like-btn" data-story-id="banc-solitaire">
+          <span class="icon">❤️</span>
+          <span class="like-count">0</span>
+        </button>
+        <button class="show-comments-btn" data-story-id="banc-solitaire">
+          <span class="icon">💬</span>
+          <span class="comment-text">Commenter</span>
+          <span class="comment-count">(0)</span>
+        </button>
+      </div>
+      <div class="comment-section" style="display: none;">
+        <div class="comments-list"></div>
+        <div class="comment-form">
+          <input type="text" class="comment-input" placeholder="Ajouter un commentaire...">
+          <button class="comment-btn" data-story-id="banc-solitaire">Publier</button>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <script src="histoire.js"></script>
+</body>
+</html>

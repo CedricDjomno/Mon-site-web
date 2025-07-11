@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jojo le Chien Magique</title>
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="histoire.css" />
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
+</head>
+<body>
+
+  <!-- Bouton Mode nuit -->
+  <button id="toggle-mode" title="Mode nuit">🌙</button>
+
+  <!-- Contenu de l’histoire -->
+  <main class="container">
+    <h2>🦴 Jojo le Chien Magique</h2>
+    <h2><img src="../assets/chien-magique.jpg" alt="Jojo le chien magique" class="illustration" />
+</h2>
+<div class="audio-controls">
+  <button id="btn-lecture">🎙️ Écouter cette histoire</button>
+  <button id="btn-arret" style="display:none;">⏹ Arrêter la lecture</button>
+</div>
+
+    <p id="histoire">
+Jojo était un chien pas comme les autres. Il ne savait pas seulement aboyer… il savait parler ! Et mieux encore, il pouvait faire apparaître des biscuits rien qu’en remuant la queue.
+
+Un matin, alors que sa jeune maîtresse Lila s’apprêtait à partir pour l’école, Jojo lui dit :  
+— Attends ! Tu as oublié ton sandwich.
+
+Lila sursauta. Jojo leva la patte et *plop*… un sandwich au fromage apparut sur le comptoir.
+
+Dès lors, plus un jour ne passait sans que Jojo n’utilise un peu de sa magie. Il faisait tomber la pluie sur les plantes, gonflait les ballons d’anniversaire, et redonnait le sourire aux grands-parents fatigués.
+
+Mais sa magie la plus précieuse, c’était de faire rire Lila quand elle en avait besoin.
+
+Un soir, il lui dit doucement :  
+— La vraie magie, ce n’est pas ce que je fais. C’est ce qu’on partage.
+
+Et Lila sut qu’avec Jojo à ses côtés, chaque jour serait une aventure enchantée.
+
+Fin.
+    </p>
+
+    <div class="interactions">
+      <div class="interaction-buttons">
+        <button class="like-btn" data-story-id="echelle">
+          <span class="icon">❤️</span>
+          <span class="like-count">0</span>
+        </button>
+        <button class="show-comments-btn" data-story-id="echelle">
+          <span class="icon">💬</span>
+          <span class="comment-text">Commenter</span>
+          <span class="comment-count">(0)</span>
+        </button>
+      </div>
+      <div class="comment-section" style="display: none;">
+        <div class="comments-list"></div>
+        <div class="comment-form">
+          <input type="text" class="comment-input" placeholder="Ajouter un commentaire...">
+          <button class="comment-btn" data-story-id="echelle">Publier</button>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <script src="histoire.js"></script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>La Tasse qui Écoutait</title>
+  <link rel="stylesheet" href="histoire.css" />
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
+</head>
+<body>
+
+  <!-- Bouton Mode nuit -->
+  <button id="toggle-mode" title="Mode nuit">🌙</button>
+
+  <!-- Contenu de l’histoire -->
+  <main class="container">
+    <h2>☕ La Tasse qui Écoutait</h2>
+    <h2><img src="../assets/tasse-ancienne.jpg" alt="Une tasse ancienne posée sur une table" class="illustration" />
+</h2>
+<div class="audio-controls">
+  <button id="btn-lecture">🎙️ Écouter cette histoire</button>
+  <button id="btn-arret" style="display:none;">⏹ Arrêter la lecture</button>
+</div>
+
+    <p id="histoire">
+Dans une vieille maison de campagne, il y avait une tasse en porcelaine ébréchée, posée sur une étagère. Personne ne s’en servait plus, sauf la grand-mère.
+
+Chaque matin, elle la remplissait de thé chaud, s’asseyait en silence… et parlait.
+
+Elle racontait ses peines, ses souvenirs, ses pensées qu’elle ne disait à personne.  
+Et la tasse écoutait.
+
+Elle ne faisait pas de bruit. Ne réchauffait pas plus que les autres. Mais quand la grand-mère la tenait entre ses mains, elle se sentait moins seule.
+
+Un jour, la petite-fille demanda :
+
+— Mamy, pourquoi tu bois toujours dans cette vieille tasse ?
+
+Et la grand-mère répondit en souriant :
+
+— Parce qu’elle me garde. Chaque mot que je verse dedans, elle le garde au chaud.
+
+Et depuis ce jour, quand la petite-fille grandit, elle servit le thé dans cette tasse — rien que pour entendre ce que le silence avait retenu.
+
+Fin.
+    </p>
+
+    <div class="interactions">
+      <div class="interaction-buttons">
+        <button class="like-btn" data-story-id="tasse-ancienne">
+          <span class="icon">❤️</span>
+          <span class="like-count">0</span>
+        </button>
+        <button class="show-comments-btn" data-story-id="tasse-ancienne">
+          <span class="icon">💬</span>
+          <span class="comment-text">Commenter</span>
+          <span class="comment-count">(0)</span>
+        </button>
+      </div>
+      <div class="comment-section" style="display: none;">
+        <div class="comments-list"></div>
+        <div class="comment-form">
+          <input type="text" class="comment-input" placeholder="Ajouter un commentaire...">
+          <button class="comment-btn" data-story-id="tasse-ancienne">Publier</button>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <script src="histoire.js"></script>
+</body>
+</html>

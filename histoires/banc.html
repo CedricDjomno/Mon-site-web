@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Le Banc qui Attendait</title>
+  <link rel="stylesheet" href="histoire.css" />
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
+</head>
+<body>
+
+  <button id="toggle-mode" title="Mode nuit">🌙</button>
+
+  <main class="container">
+    <h2>🪑 Le Banc qui Attendait</h2>
+    <h2><img src="../assets/banc-solitaire.jpg" alt="Un banc vide sous un arbre" class="illustration" /></h2>
+
+    <div class="audio-controls">
+      <button id="btn-lecture">🎙️ Écouter cette histoire</button>
+      <button id="btn-arret" style="display:none;">⏹ Arrêter la lecture</button>
+    </div>
+
+    <p id="histoire">
+Dans un parc presque oublié, il y avait un vieux banc en bois. Il grinçait un peu, se décolorait lentement, mais il tenait bon.
+
+Il avait vu des amoureux se tenir la main. Des enfants manger des glaces. Des anciens raconter des histoires. Puis un jour… plus personne.
+
+Les gens passaient, mais ne s'arrêtaient plus. Le banc attendait.
+
+Un matin, une petite fille s'assit. Elle posa une poupée sur l'accoudoir et lui dit :
+
+— Tu sais, il paraît que les bancs ont des secrets.
+
+Elle ne resta que quelques minutes. Mais quand elle partit, le banc sembla un peu plus droit.
+
+Depuis ce jour, chaque semaine, la fillette revint.
+
+Et le banc sut que même l'attente pouvait fleurir à nouveau.
+
+Fin.
+    </p>
+
+    <div class="interactions">
+      <div class="interaction-buttons">
+        <button class="like-btn" data-story-id="banc-solitaire">
+          <span class="icon">❤️</span>
+          <span class="like-count">0</span>
+        </button>
+        <button class="show-comments-btn" data-story-id="banc-solitaire">
+          <span class="icon">💬</span>
+          <span class="comment-text">Commenter</span>
+          <span class="comment-count">(0)</span>
+        </button>
+      </div>
+      <div class="comment-section" style="display: none;">
+        <div class="comments-list"></div>
+        <div class="comment-form">
+          <input type="text" class="comment-input" placeholder="Ajouter un commentaire...">
+          <button class="comment-btn" data-story-id="banc-solitaire">Publier</button>
+        </div>
+      </div>
+    </div>
+
+  </main>
+  <script src="histoire.js"></script>
+</body>
+</html>

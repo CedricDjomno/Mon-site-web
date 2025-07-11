@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Les Histoires de Cédric</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
+  <script src="script.js"></script>
+</head>
+<body>
+  <div id="monElement"></div>
+  <button id="toggle-mode" title="Mode nuit">🌙</button>
+
+  <div id="content">
+    <header>
+      <h1>📚 Il était une fois...</h1>
+      <p>Découvre un monde d'histoires à lire, écouter ou rêver.</p>
+
+<!-- Barre de recherche -->
+<div class="search-container">
+  <input type="text" id="search-input" placeholder="Rechercher une histoire...">
+  <select id="theme-filter">
+    <option value="">Tous les thèmes</option>
+    <option value="africain">Contes africains</option>
+    <option value="aventure">Aventures</option>
+    <option value="animaux">Animaux</option>
+    <option value="fantastique">Fantastique</option>
+  </select>
+  <button id="search-btn">🔍</button>
+</div>
+
+    </header>
+    <section id="bibliotheque">
+      <div class="carte" data-theme="Contes africains">
+        <img src="assets/lune.jpg" alt="Illustration de l'histoire" />
+        <h2>La Lune et le Bananier</h2>
+        <p>Un conte doux venu du ciel africain.</p>
+        <a href="histoires/lune.html">Lire l'histoire ➜</a>
+        <div class="interactions">
+          <div class="interaction-buttons">
+            <button class="like-btn" data-story-id="lune">
+              <span class="icon">❤️</span>
+              <span class="like-count">0</span>
+            </button>
+            <button class="show-comments-btn" data-story-id="lune">
+              <span class="icon">💬</span>
+              <span class="comment-text">Commenter</span>
+            </button>
+          </div>
+          <div class="comment-section">
+            <input type="text" class="comment-input" placeholder="Ajouter un commentaire...">
+            <button class="comment-btn" data-story-id="lune">Publier</button>
+            <div class="comments-list"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="carte" data-theme="Contes africains">
+        <img src="assets/chien-magique.jpg" alt="Chien magique" />
+        <h2>Jojo le Chien Magique</h2>
+        <p>Une aventure malicieuse et pleine de rires.</p>
+        <a href="histoires/jojo.html">Lire l'histoire ➜</a>
+        <div class="interactions">
+          <div class="interaction-buttons">
+            <button class="like-btn" data-story-id="chien-magique">
+              <span class="icon">❤️</span>
+              <span class="like-count">0</span>
+            </button>
+            <button class="show-comments-btn" data-story-id="chien-magique">
+              <span class="icon">💬</span>
+              <span class="comment-text">Commenter</span>
+            </button>
+          </div>
+          <div class="comment-section">
+            <input type="text" class="comment-input" placeholder="Ajouter un commentaire...">
+            <button class="comment-btn" data-story-id="chien-magique">Publier</button>
+            <div class="comments-list"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="carte" data-theme="Contes africains">
+        <img src="assets/banc-solitaire.jpg" alt="Illustration de l'histoire" />
+        <h2>Le Banc qui Attendait</h2>
+        <p>Un conte doux venu du ciel africain.</p>
+        <a href="histoires/Banc.html">Lire l'histoire ➜</a>
+        <div class="interactions">
+          <div class="interaction-buttons">
+            <button class="like-btn" data-story-id="banc-solitaire">
+              <span class="icon">❤️</span>
+              <span class="like-count">0</span>
+            </button>
+            <button class="show-comments-btn" data-story-id="banc-solitaire">
+              <span class="icon">💬</span>
+              <span class="comment-text">Commenter</span>
+            </button>
+          </div>
+          <div class="comment-section">
+            <input type="text" class="comment-input" placeholder="Ajouter un commentaire...">
+            <button class="comment-btn" data-story-id="banc-solitaire">Publier</button>
+            <div class="comments-list"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="carte" data-theme="Contes africains">
+        <img src="assets/bottine-perdue.jpg" alt="Chien magique" />
+        <h2>👢 La Bottine Voyageuse</h2>
+        <p>Une aventure malicieuse et pleine de rires.</p>
+        <a href="histoires/Bottine.html">Lire l’histoire ➜</a>
+        <div class="interactions">
+          <div class="interaction-buttons">
+            <button class="like-btn" data-story-id="bottine">
+              <span class="icon">❤️</span>
+              <span class="like-count">0</span>
+            </button>
+            <button class="show-comments-btn" data-story-id="bottine">
+              <span class="icon">💬</span>
+              <span class="comment-text">Commenter</span>
+            </button>
+          </div>
+          <div class="comment-section">
+            <input type="text" class="comment-input" placeholder="Ajouter un commentaire...">
+            <button class="comment-btn" data-story-id="bottine">Publier</button>
+            <div class="comments-list"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="carte" data-theme="Contes africains">
+        <img src="assets/chapeau-vent.jpg" alt="Illustration de l'histoire" />
+        <h2>🎩 Le Chapeau du Vent</h2>
+        <p>Un conte doux venu du ciel africain.</p>
+        <a href="histoires/Chapeau.html">Lire l’histoire ➜</a>
+        <div class="interactions">
+          <div class="interaction-buttons">
+            <button class="like-btn" data-story-id="chapeau">
+              <span class="icon">❤️</span>
+              <span class="like-count">0</span>
+            </button>
+            <button class="show-comments-btn" data-story-id="chapeau">
+              <span class="icon">💬</span>
+              <span class="comment-text">Commenter</span>
+            </button>
+          </div>
+          <div class="comment-section">
+            <input type="text" class="comment-input" placeholder="Ajouter un commentaire...">
+            <button class="comment-btn" data-story-id="chapeau">Publier</button>
+            <div class="comments-list"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="carte" data-theme="Contes africains">
+        <img src="assets/cle-vieille.jpg" alt="Chien magique" />
+        <h2>🗝️ La Clé sans Porte</h2>
+        <p>Une aventure malicieuse et pleine de rires.</p>
+        <a href="histoires/Cle.html">Lire l’histoire ➜</a>
+        <div class="interactions">
+          <div class="interaction-buttons">
+            <button class="like-btn" data-story-id="cle">
+              <span class="icon">❤️</span>
+              <span class="like-count">0</span>
+            </button>
+            <button class="show-comments-btn" data-story-id="cle">
+              <span class="icon">💬</span>
+              <span class="comment-text">Commenter</span>
+            </button>
+          </div>
+          <div class="comment-section">
+            <input type="text" class="comment-input" placeholder="Ajouter un commentaire...">
+            <button class="comment-btn" data-story-id="cle">Publier</button>
+            <div class="comments-list"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="carte" data-theme="Contes africains">
+        <img src="assets/crayon-dormant.jpg" alt="Illustration de l'histoire" />
+        <h2>✏️ Le Crayon qui ne Dessinait Plus</h2>
+        <p>Un conte doux venu du ciel africain.</p>
+        <a href="histoires/Crayon.html">Lire l’histoire ➜</a>
+        <div class="interactions">
+          <div class="interaction-buttons">
+            <button class="like-btn" data-story-id="crayon">
+              <span class="icon">❤️</span>
+              <span class="like-count">0</span>
+            </button>
+            <button class="show-comments-btn" data-story-id="crayon">
+              <span class="icon">💬</span>
+              <span class="comment-text">Commenter</span>
+            </button>
+          </div>
+          <div class="comment-section">
+            <input type="text" class="comment-input" placeholder="Ajouter un commentaire...">
+            <button class="comment-btn" data-story-id="crayon">Publier</button>
+            <div class="comments-list"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="carte" data-theme="Contes africains">
+        <img src="assets/echelle-ciel.jpg" alt="Chien magique" />
+        <h2>🪜 L’Échelle vers Maintenant</h2>
+        <p>Une aventure malicieuse et pleine de rires.</p>
+        <a href="histoires/Echelle.html">Lire l’histoire ➜</a>
+        <div class="interactions">
+          <div class="interaction-buttons">
+            <button class="like-btn" data-story-id="echelle">
+              <span class="icon">❤️</span>
+              <span class="like-count">0</span>
+            </button>
+            <button class="show-comments-btn" data-story-id="echelle">
+              <span class="icon">💬</span>
+              <span class="comment-text">Commenter</span>
+            </button>
+          </div>
+          <div class="comment-section">
+            <input type="text" class="comment-input" placeholder="Ajouter un commentaire...">
+            <button class="comment-btn" data-story-id="echelle">Publier</button>
+            <div class="comments-list"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="carte" data-theme="Contes africains">
+        <img src="assets/etoile-mare.jpg" alt="Illustration de l'histoire" />
+        <h2>⭐ L’Étoile tombée dans la Mare</h2>
+        <p>Un conte doux venu du ciel africain.</p>
+        <a href="histoires/etoile.html">Lire l’histoire ➜</a>
+        <div class="interactions">
+          <div class="interaction-buttons">
+            <button class="like-btn" data-story-id="etoile">
+              <span class="icon">❤️</span>
+              <span class="like-count">0</span>
+            </button>
+            <button class="show-comments-btn" data-story-id="etoile">
+              <span class="icon">💬</span>
+              <span class="comment-text">Commenter</span>
+            </button>
+          </div>
+          <div class="comment-section">
+            <input type="text" class="comment-input" placeholder="Ajouter un commentaire...">
+            <button class="comment-btn" data-story-id="etoile">Publier</button>
+            <div class="comments-list"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="carte" data-theme="Contes africains">
+        <img src="assets/graine-nuage.jpg" alt="Chien magique" />
+        <h2>🌱 La Graine et le Nuage</h2>
+        <p>Une aventure malicieuse et pleine de rires.</p>
+        <a href="histoires/Graine.html">Lire l’histoire ➜</a>
+        <div class="interactions">
+          <div class="interaction-buttons">
+            <button class="like-btn" data-story-id="graine-nuage">
+              <span class="icon">❤️</span>
+              <span class="like-count">0</span>
+            </button>
+            <button class="show-comments-btn" data-story-id="graine-nuage">
+              <span class="icon">💬</span>
+              <span class="comment-text">Commenter</span>
+            </button>
+          </div>
+          <div class="comment-section">
+            <input type="text" class="comment-input" placeholder="Ajouter un commentaire...">
+            <button class="comment-btn" data-story-id="graine-nuage">Publier</button>
+            <div class="comments-list"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="carte" data-theme="Contes africains">
+        <img src="assets/miroir-brise.jpg" alt="Illustration de l'histoire" />
+        <h2>🪞 Le Miroir qui Tremblait</h2>
+        <p>Un conte doux venu du ciel africain.</p>
+        <a href="histoires/Mirroir.html">Lire l’histoire ➜</a>
+        <div class="interactions">
+          <div class="interaction-buttons">
+            <button class="like-btn" data-story-id="miroir-brise">
+              <span class="icon">❤️</span>
+              <span class="like-count">0</span>
+            </button>
+            <button class="show-comments-btn" data-story-id="miroir-brise">
+              <span class="icon">💬</span>
+              <span class="comment-text">Commenter</span>
+            </button>
+          </div>
+          <div class="comment-section">
+            <input type="text" class="comment-input" placeholder="Ajouter un commentaire...">
+            <button class="comment-btn" data-story-id="miroir-brise">Publier</button>
+            <div class="comments-list"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="carte" data-theme="Contes africains">
+        <img src="assets/montre-silence.jpg" alt="Chien magique" />
+        <h2>⌚ Le Silence et la Montre</h2>
+        <p>Une aventure malicieuse et pleine de rires.</p>
+        <a href="histoires/Montre.html">Lire l’histoire ➜</a>
+        <div class="interactions">
+          <div class="interaction-buttons">
+            <button class="like-btn" data-story-id="montre-silence">
+              <span class="icon">❤️</span>
+              <span class="like-count">0</span>
+            </button>
+            <button class="show-comments-btn" data-story-id="montre-silence">
+              <span class="icon">💬</span>
+              <span class="comment-text">Commenter</span>
+            </button>
+          </div>
+          <div class="comment-section">
+            <input type="text" class="comment-input" placeholder="Ajouter un commentaire...">
+            <button class="comment-btn" data-story-id="montre-silence">Publier</button>
+            <div class="comments-list"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="carte" data-theme="Contes africains">
+        <img src="assets/pierre-ruisseau.jpg" alt="Illustration de l'histoire" />
+        <h2>🪨 La Pierre et le Ruisseau</h2>
+        <p>Un conte doux venu du ciel africain.</p>
+        <a href="histoires/Pierre.html">Lire l’histoire ➜</a>
+        <div class="interactions">
+          <div class="interaction-buttons">
+            <button class="like-btn" data-story-id="pierre-ruisseau">
+              <span class="icon">❤️</span>
+              <span class="like-count">0</span>
+            </button>
+            <button class="show-comments-btn" data-story-id="pierre-ruisseau">
+              <span class="icon">💬</span>
+              <span class="comment-text">Commenter</span>
+            </button>
+          </div>
+          <div class="comment-section">
+            <input type="text" class="comment-input" placeholder="Ajouter un commentaire...">
+            <button class="comment-btn" data-story-id="pierre-ruisseau">Publier</button>
+            <div class="comments-list"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="carte" data-theme="Contes africains">
+        <img src="assets/plume-ciel.jpg" alt="Chien magique" />
+        <h2>🪶 La Plume qui Tombait Lentement</h2>
+        <p>Une aventure malicieuse et pleine de rires.</p>
+        <a href="histoires/Plume.html">Lire l’histoire ➜</a>
+        <div class="interactions">
+          <div class="interaction-buttons">
+            <button class="like-btn" data-story-id="plume-ciel">
+              <span class="icon">❤️</span>
+              <span class="like-count">0</span>
+            </button>
+            <button class="show-comments-btn" data-story-id="plume-ciel">
+              <span class="icon">💬</span>
+              <span class="comment-text">Commenter</span>
+            </button>
+          </div>
+          <div class="comment-section">
+            <input type="text" class="comment-input" placeholder="Ajouter un commentaire...">
+            <button class="comment-btn" data-story-id="plume-ciel">Publier</button>
+            <div class="comments-list"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="carte" data-theme="Contes africains">
+        <img src="assets/chat-soleil.jpg" alt="Illustration de l'histoire" />
+        <h2>☀️ Le Chat et le Rayon de Soleil</h2>
+        <p>Un conte doux venu du ciel africain.</p>
+        <a href="histoires/Soleil.html">Lire l’histoire ➜</a>
+        <div class="interactions">
+          <div class="interaction-buttons">
+            <button class="like-btn" data-story-id="chat-soleil">
+              <span class="icon">❤️</span>
+              <span class="like-count">0</span>
+            </button>
+            <button class="show-comments-btn" data-story-id="chat-soleil">
+              <span class="icon">💬</span>
+              <span class="comment-text">Commenter</span>
+            </button>
+          </div>
+          <div class="comment-section">
+            <input type="text" class="comment-input" placeholder="Ajouter un commentaire...">
+            <button class="comment-btn" data-story-id="chat-soleil">Publier</button>
+            <div class="comments-list"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="carte" data-theme="Contes africains">
+        <img src="assets/tasse-ancienne.jpg" alt="Chien magique" />
+        <h2>☕ La Tasse qui Écoutait</h2>
+        <p>Une aventure malicieuse et pleine de rires.</p>
+        <a href="histoires/Tasse.html">Lire l’histoire ➜</a>
+        <div class="interactions">
+          <div class="interaction-buttons">
+            <button class="like-btn" data-story-id="tasse-ancienne">
+              <span class="icon">❤️</span>
+              <span class="like-count">0</span>
+            </button>
+            <button class="show-comments-btn" data-story-id="tasse-ancienne">
+              <span class="icon">💬</span>
+              <span class="comment-text">Commenter</span>
+            </button>
+          </div>
+          <div class="comment-section">
+            <input type="text" class="comment-input" placeholder="Ajouter un commentaire...">
+            <button class="comment-btn" data-story-id="tasse-ancienne">Publier</button>
+            <div class="comments-list"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="carte" data-theme="Contes africains">
+        <img src="assets/vent-tambour.jpg" alt="Chien magique" />
+        <h2>🌬️ Le Vent et le Tambour</h2>
+        <p>Une aventure malicieuse et pleine de rires.</p>
+        <a href="histoires/Vent.html">Lire l’histoire ➜</a>
+        <div class="interactions">
+          <div class="interaction-buttons">
+            <button class="like-btn" data-story-id="vent-tambour">
+              <span class="icon">❤️</span>
+              <span class="like-count">0</span>
+            </button>
+            <button class="show-comments-btn" data-story-id="vent-tambour">
+              <span class="icon">💬</span>
+              <span class="comment-text">Commenter</span>
+            </button>
+          </div>
+          <div class="comment-section">
+            <input type="text" class="comment-input" placeholder="Ajouter un commentaire...">
+            <button class="comment-btn" data-story-id="vent-tambour">Publier</button>
+            <div class="comments-list"></div>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- Continuez avec le même pattern pour toutes les autres cartes -->
+      <!-- ... autres cartes d'histoires ... -->
+
+    </section>
+
+    <footer>
+      <p>✨ Site imaginé par Cédric – Que chaque heure vous raconte quelque chose</p>
+    </footer>
+  </div>
+</body>
+</html>

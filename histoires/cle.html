@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>La Clé sans Porte</title>
+  <link rel="stylesheet" href="histoire.css" />
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
+</head>
+<body>
+
+  <button id="toggle-mode" title="Mode nuit">🌙</button>
+
+  <main class="container">
+    <h2>🗝️ La Clé sans Porte</h2>
+    <h2><img src="../assets/cle-vieille.jpg" alt="Une vieille clé posée sur un carnet" class="illustration" />
+</h2>
+<div class="audio-controls">
+  <button id="btn-lecture">🎙️ Écouter cette histoire</button>
+  <button id="btn-arret" style="display:none;">⏹ Arrêter la lecture</button>
+</div>
+
+    <p id="histoire">
+Un enfant trouva une vieille clé rouillée dans la forêt.
+
+Elle n’ouvrait ni porte ni coffre, ni boîte ni cadenas.  
+Mais l’enfant la garda. Juste parce qu’elle était belle.
+
+Chaque jour, il l’imagina différente : clé d’un royaume oublié, d’un grenier magique, d’un rêve enfermé.
+
+Elle devint son trésor, son secret, son passeport pour l’imaginaire.
+
+Un jour, un vieillard vit la clé et sourit :
+
+— Elle n’ouvre rien, dit-il. Mais elle t’ouvre à tout.
+
+Et l’enfant comprit que certaines clés ne déverrouillent pas des choses...  
+Elles déverrouillent des pensées.
+
+Fin.
+    </p>
+
+    <div class="interactions">
+      <div class="interaction-buttons">
+        <button class="like-btn" data-story-id="cle">
+          <span class="icon">❤️</span>
+          <span class="like-count">0</span>
+        </button>
+        <button class="show-comments-btn" data-story-id="cle">
+          <span class="icon">💬</span>
+          <span class="comment-text">Commenter</span>
+          <span class="comment-count">(0)</span>
+        </button>
+      </div>
+      <div class="comment-section" style="display: none;">
+        <div class="comments-list"></div>
+        <div class="comment-form">
+          <input type="text" class="comment-input" placeholder="Ajouter un commentaire...">
+          <button class="comment-btn" data-story-id="cle">Publier</button>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <script src="histoire.js"></script>
+</body>
+</html>

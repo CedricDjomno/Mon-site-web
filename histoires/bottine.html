@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>La Bottine Voyageuse</title>
+  <link rel="stylesheet" href="histoire.css" />
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
+</head>
+<body>
+
+  <!-- Bouton Mode nuit -->
+  <button id="toggle-mode" title="Mode nuit">🌙</button>
+
+  <!-- Contenu de l’histoire -->
+  <main class="container">
+    <h2>👢 La Bottine Voyageuse</h2>
+    <h2><img src="../assets/bottine-perdue.jpg" alt="Petite bottine abandonnée sur un chemin" class="illustration" />
+    </h2>
+
+<div class="audio-controls">
+  <button id="btn-lecture">🎙️ Écouter cette histoire</button>
+  <button id="btn-arret" style="display:none;">⏹ Arrêter la lecture</button>
+</div>>
+
+    <p id="histoire">
+Tout avait commencé par un oubli. Une petite bottine rose, oubliée près d’un banc au parc.
+
+Elle resta là un moment. Puis le vent la fit rouler. Un chien la trouva, la lança dans les airs. Elle retomba dans une charrette de marché.
+
+Quand le vendeur l’aperçut, il la posa près de ses pommes en disant :
+— Qui oublie une bottine, a l’esprit en balade.
+
+La bottine se retrouva dans des lieux étranges : sur une étagère de fleurs, au bord d’un quai, sur la tête d’une statue. Chaque endroit lui donnait un souvenir.
+
+Un jour, une vieille dame la ramassa, l’essuya et dit :
+— Tu as dû vivre bien des aventures, toi.
+
+Elle en fit un pot à crayons, sur sa table de dessin. Et chaque fois qu’elle écrivait une histoire, elle murmurait :
+
+— C’est ta faute, petite bottine. Tu me donnes envie de voyager.
+
+Fin.
+    </p>
+
+    <div class="interactions">
+      <div class="interaction-buttons">
+        <button class="like-btn" data-story-id="bottine">
+          <span class="icon">❤️</span>
+          <span class="like-count">0</span>
+        </button>
+        <button class="show-comments-btn" data-story-id="bottine">
+          <span class="icon">💬</span>
+          <span class="comment-text">Commenter</span>
+          <span class="comment-count">(0)</span>
+        </button>
+      </div>
+      <div class="comment-section" style="display: none;">
+        <div class="comments-list"></div>
+        <div class="comment-form">
+          <input type="text" class="comment-input" placeholder="Ajouter un commentaire...">
+          <button class="comment-btn" data-story-id="bottine">Publier</button>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <script src="histoire.js"></script>
+</body>
+</html>

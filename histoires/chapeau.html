@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Le Chapeau du Vent</title>
+  <link rel="stylesheet" href="histoire.css" />
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
+</head>
+<body>
+
+  <!-- Bouton Mode nuit -->
+  <button id="toggle-mode" title="Mode nuit">🌙</button>
+
+  <!-- Contenu de l’histoire -->
+  <main class="container">
+    <h2>🎩 Le Chapeau du Vent</h2>
+    </h2><img src="../assets/chapeau-vent.jpg" alt="Un chapeau volant dans le ciel" class="illustration" />
+</h2>
+<div class="audio-controls">
+  <button id="btn-lecture">🎙️ Écouter cette histoire</button>
+  <button id="btn-arret" style="display:none;">⏹ Arrêter la lecture</button>
+</div>
+
+    <p id="histoire">
+C’était un vieux chapeau en feutre brun. Il appartenait à un vieux monsieur, silencieux et élégant, qui se promenait chaque jour au bord du canal.
+
+Un matin, une brise souleva le chapeau. Il tourna trois fois… et s’envola.
+
+Le vieux monsieur sourit, puis reprit sa marche, les mains croisées dans le dos.
+
+Pendant ce temps, le chapeau voyageait. Il survola les champs, s’accrocha à une girouette, fit rire des enfants, atterrit sur la tête d’un chien surpris, s’endormit dans une barque.
+
+Partout où il passait, il apportait un sourire, un soupir ou un rêve.
+
+Un jour, une fillette le ramassa.
+
+Elle le posa sur sa tête, et déclara :  
+— Il est un peu grand, mais il sent l’aventure.
+
+Et depuis ce jour, c’est le chapeau qui choisit où aller. Car certains objets n’appartiennent à personne… sauf au vent.
+
+Fin.
+    </p>
+
+    <div class="interactions">
+      <div class="interaction-buttons">
+        <button class="like-btn" data-story-id="Chapeau">
+          <span class="icon">❤️</span>
+          <span class="like-count">0</span>
+        </button>
+        <button class="show-comments-btn" data-story-id="Chapeau">
+          <span class="icon">💬</span>
+          <span class="comment-text">Commenter</span>
+          <span class="comment-count">(0)</span>
+        </button>
+      </div>
+      <div class="comment-section" style="display: none;">
+        <div class="comments-list"></div>
+        <div class="comment-form">
+          <input type="text" class="comment-input" placeholder="Ajouter un commentaire...">
+          <button class="comment-btn" data-story-id="Chapeau">Publier</button>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <script src="histoire.js"></script>
+</body>
+</html>

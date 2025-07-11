@@ -1,0 +1,249 @@
+/* 🌗 Bouton mode nuit */
+#toggle-mode {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 10000;
+  background: #ffe69a;
+  border: none;
+  border-radius: 50%;
+  padding: 0.8rem 1rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transition: background 0.3s ease;
+}
+
+body {
+  padding: 2rem;
+  background: linear-gradient(to bottom, #e0f7fa, #fce4ec);
+  font-family: 'Georgia', serif;
+  color: #333;
+  transition: background 0.4s ease, color 0.4s ease;
+}
+
+.container {
+  max-width: 800px;
+  margin: auto;
+  background: #ffffffc2;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.container h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.illustration {
+  width: 70%;
+  max-height: 500px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+}
+
+button {
+  display: block;
+  margin: 1rem auto;
+  padding: 0.7rem 1.4rem;
+  background-color: #ffd369;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #ffbb00;
+}
+
+#histoire {
+  white-space: pre-line;
+  line-height: 1.6;
+}
+
+/* 🌙 Mode nuit */
+body.nuit {
+  background: #1e1e2e;
+  color: #f0f0f0;
+}
+
+body.nuit .container {
+  background: #2a2a3a;
+}
+
+body.nuit .entete {
+  background: linear-gradient(to bottom, #2a2a3a, #1e1e2e);
+  color: #f0f0f0;
+}
+
+.audio-controls {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin: 1.5rem auto;
+}
+
+#btn-arret {
+  background-color: #ff6b6b;
+}
+
+#btn-arret:hover {
+  background-color: #ff5252;
+}
+
+/* Styles pour les interactions */
+.interaction-buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  margin-top: 0.5rem;
+}
+
+.like-btn, .show-comments-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.5rem 0.8rem;
+  border-radius: 20px;
+  border: none;
+  background-color: #f5f5f5;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+}
+
+.like-btn {
+  color: #e74c3c;
+}
+
+.show-comments-btn {
+  color: #3498db;
+}
+
+.like-btn:hover, .show-comments-btn:hover {
+  transform: scale(1.05);
+}
+
+.like-btn:hover {
+  background-color: #ffebee;
+}
+
+.show-comments-btn:hover {
+  background-color: #e3f2fd;
+}
+
+.icon {
+  font-size: 1.1rem;
+}
+
+.comment-text, .comment-count {
+  font-weight: 500;
+}
+
+.comment-section {
+  margin: 0.5rem 1rem 1rem;
+  padding: 0.8rem;
+  background: #f9f9f9;
+  border-radius: 8px;
+}
+
+.comment-form {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.comment-input {
+  flex: 1;
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.comment-btn {
+  padding: 0.5rem 1rem;
+  background: #ffd369;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.comments-list {
+  margin-top: 0.5rem;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.comment {
+  padding: 0.5rem;
+  border-bottom: 1px solid #eee;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+.comment:last-child {
+  border-bottom: none;
+}
+
+/* Mode nuit pour les interactions */
+body.nuit .like-btn,
+body.nuit .show-comments-btn {
+  background-color: #2c3e50;
+  color: #ecf0f1;
+}
+
+body.nuit .like-btn:hover {
+  background-color: #4a2a2a;
+}
+
+body.nuit .show-comments-btn:hover {
+  background-color: #2a3a4a;
+}
+
+body.nuit .comment-section {
+  background: #2c2c3b;
+  border-color: #444;
+}
+
+body.nuit .comment {
+  border-color: #444;
+}
+
+/* Animation */
+.pulse {
+  animation: pulse 0.3s ease;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+.guest-comment {
+  background-color: #f5f5f5;
+  border-left: 3px solid #ccc;
+}
+
+.guest-badge {
+  background: #ddd;
+  color: #555;
+  font-size: 0.7em;
+  padding: 2px 5px;
+  border-radius: 3px;
+  margin-left: 8px;
+}
+
+.comment-author {
+  color: #2c3e50;
+}
+
+.guest-comment .comment-author {
+  color: #7f8c8d;
+}
