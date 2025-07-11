@@ -146,11 +146,15 @@ body.nuit .entete {
   font-weight: 500;
 }
 
+/* Styles pour les commentaires - Mode clair */
 .comment-section {
   margin: 0.5rem 1rem 1rem;
   padding: 0.8rem;
-  background: #f9f9f9;
+  background: #f9f9f9; /* Fond clair par défaut */
   border-radius: 8px;
+  display: none;
+  color: #333; /* Texte foncé par défaut */
+  border: 1px solid #eee;
 }
 
 .comment-form {
@@ -160,18 +164,22 @@ body.nuit .entete {
 }
 
 .comment-input {
-  flex: 1;
+  width: calc(100% - 1rem);
   padding: 0.5rem;
   border: 1px solid #ddd;
   border-radius: 4px;
+  margin-bottom: 0.5rem;
+  background: white;
+  color: #333;
 }
 
 .comment-btn {
-  padding: 0.5rem 1rem;
+  padding: 0.3rem 0.6rem;
   background: #ffd369;
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  color: #000;
 }
 
 .comments-list {
@@ -181,69 +189,44 @@ body.nuit .entete {
 }
 
 .comment {
-  padding: 0.5rem;
+  padding: 0.5rem 0.3rem;
   border-bottom: 1px solid #eee;
   font-size: 0.9rem;
-  margin-bottom: 0.5rem;
+  color: #333; /* Texte foncé par défaut */
 }
 
 .comment:last-child {
   border-bottom: none;
 }
 
-/* Mode nuit pour les interactions */
-body.nuit .like-btn,
-body.nuit .show-comments-btn {
-  background-color: #2c3e50;
-  color: #ecf0f1;
-}
-
-body.nuit .like-btn:hover {
-  background-color: #4a2a2a;
-}
-
-body.nuit .show-comments-btn:hover {
-  background-color: #2a3a4a;
-}
+/* ====================== */
+/* MODE NUIT - COMMENTAIRES */
+/* ====================== */
 
 body.nuit .comment-section {
   background: #2c2c3b;
   border-color: #444;
+  color: #f0f0f0; /* Texte clair en mode nuit */
 }
 
 body.nuit .comment {
+  color: #f0f0f0 !important; /* Force la couleur du texte */
   border-color: #444;
 }
 
-/* Animation */
-.pulse {
-  animation: pulse 0.3s ease;
+body.nuit .comment-input {
+  background: #3a3a4a;
+  color: #f0f0f0;
+  border-color: #555;
 }
 
-@keyframes pulse {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.1); }
-  100% { transform: scale(1); }
+body.nuit .comment-btn {
+  background: #3498db;
+  color: white;
 }
 
-.guest-comment {
-  background-color: #f5f5f5;
-  border-left: 3px solid #ccc;
-}
-
-.guest-badge {
-  background: #ddd;
-  color: #555;
-  font-size: 0.7em;
-  padding: 2px 5px;
-  border-radius: 3px;
-  margin-left: 8px;
-}
-
-.comment-author {
-  color: #2c3e50;
-}
-
-.guest-comment .comment-author {
-  color: #7f8c8d;
+/* Garantit que tous les textes dans les commentaires sont visibles */
+body.nuit .comments-list,
+body.nuit .comments-list * {
+  color: #f0f0f0 !important;
 }
