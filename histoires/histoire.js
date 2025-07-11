@@ -216,7 +216,7 @@ function loadComments(storyId, container) {
         commentDiv.innerHTML = `
           <div class="comment-header">
             <strong class="comment-author">${comment.userName}</strong>
-            ${comment.isGuest ? '<span class="guest-tag">(Visiteur)</span>' : ''}
+            ${comment.isGuest ? '<span class="guest-tag"></span>' : ''}
           </div>
           <div class="comment-text">${comment.text}</div>
         `;
